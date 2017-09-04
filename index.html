@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="todos">
+ <head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+   <title></title>
+ </head>
+
+
+ <style>
+ .strike{
+   text-decoration: line-through;
+ }
+ </style>
+
+ <body ng-controller="todoCtrl">
+
+
+
+<input type="text" ng-model="newTodo" placeholder="Add New Todo">
+
+
+<button type="button" ng-click="addTodo(newTodo)" >Submit</button>
+
+
+  <div ng-class="{strike:checked}" ng-repeat="todo in todos track by $index">
+
+    <button ng-click="checked = !checked">Done
+    </button>
+    
+    <button type="button"
+    ng-click="removeTodo(todo)">Delete</button>
+
+    {{ todo }}
+  </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+<script src="./app.js"></script>
+<script src="./myCtrl.js"></script>
+
+</body>
+</html>
